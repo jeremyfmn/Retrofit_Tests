@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Retrofit_Tests</string>
+    <string name="search_keyword">Recherchez un mot-clé ici</string>
+    <string name="search">Rechercher</string>
+</resources>
