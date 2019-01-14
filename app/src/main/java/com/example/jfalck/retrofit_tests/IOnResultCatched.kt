@@ -2,6 +2,7 @@ package com.example.jfalck.retrofit_tests
 
 interface IOnResultCatched {
 
-    fun onResultCatched(result: String)
+    fun onStringResultCatched(result: String)
 
+    fun onApiObjectCatched(result: List<ApiModel.Post>)
 }

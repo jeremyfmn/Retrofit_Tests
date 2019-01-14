@@ -11,7 +11,12 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity(), IOnResultCatched {
 
-    override fun onResultCatched(result: String) {
+
+    override fun onApiObjectCatched(result: List<ApiModel.Post>) {
+        (resultsList.adapter as ResultsAdapter).setPosts(result)
+    }
+
+    override fun onStringResultCatched(result: String) {
         if (!TextUtils.isEmpty(result))
             txt_search_result!!.text = result
     }
@@ -39,7 +44,7 @@ class MainActivity : AppCompatActivity(), IOnResultCatched {
 
         searchButton.setOnClickListener {
             mViewModel.onResultCatchedListener = this
-            mViewModel.beginSearch(searchText.text.toString(), this)
+            mViewModel.beginApiSearch(this)
         }
 
         resultsList.layoutManager = LinearLayoutManager(this)

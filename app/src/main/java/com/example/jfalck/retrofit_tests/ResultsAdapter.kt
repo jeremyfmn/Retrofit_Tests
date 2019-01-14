@@ -8,13 +8,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import java.util.*
 
 
 class ResultsAdapter(context: Context) : RecyclerView.Adapter<ResultsAdapter.MyViewHolder>() {
 
     private val mContext = context;
-    private val posts = Arrays.asList(Post("test", "https://i.redd.it/4qtq32jxe6a21.jpg"), Post("test2", "https://i.redd.it/tkcsikkmeca21.jpg"))
+    private var posts: List<ApiModel.Post> = emptyList()
+
+    fun setPosts(newPosts: List<ApiModel.Post>) {
+        posts = newPosts
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val inflater = LayoutInflater.from(parent.getContext())
@@ -35,7 +39,7 @@ class ResultsAdapter(context: Context) : RecyclerView.Adapter<ResultsAdapter.MyV
         private var title: TextView? = null
         private var url: TextView? = null
 
-        private var currentPost: Post? = null
+        private var currentPost: ApiModel.Post? = null
 
         init {
             title = itemView.findViewById<View>(R.id.result_title) as TextView
@@ -43,15 +47,15 @@ class ResultsAdapter(context: Context) : RecyclerView.Adapter<ResultsAdapter.MyV
 
             itemView.setOnClickListener {
                 val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse(currentPost!!.mUrl)
+                intent.data = Uri.parse(currentPost!!.url)
                 context.startActivity(intent)
             }
         }
 
-        fun display(post: Post) {
+        fun display(post: ApiModel.Post) {
             currentPost = post
-            title!!.text = post.mTitle
-            url!!.text = post.mUrl
+            title!!.text = post.title
+            url!!.text = post.url
         }
 
     }
