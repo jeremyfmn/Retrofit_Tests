@@ -1,0 +1,16 @@
+
+\.idea/libraries/
+
+\.idea/
+
+\.gradle/buildOutputCleanup/
+
+\.gradle/4\.6/fileHashes/
+
+\.gradle/4\.6/javaCompile/
+
+\.gradle/4\.6/taskHistory/
+
+\.gradle/vcsWorkingDirs/gc\.properties
+
+app/app\.iml
