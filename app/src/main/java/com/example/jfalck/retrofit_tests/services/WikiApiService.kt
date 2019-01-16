@@ -1,5 +1,6 @@
-package com.example.jfalck.retrofit_tests
+package com.example.jfalck.retrofit_tests.services
 
+import com.example.jfalck.retrofit_tests.models.Model
 import io.reactivex.Observable
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory

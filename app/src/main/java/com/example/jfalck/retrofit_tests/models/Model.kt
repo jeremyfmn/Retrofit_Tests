@@ -1,4 +1,4 @@
-package com.example.jfalck.retrofit_tests
+package com.example.jfalck.retrofit_tests.models
 
 object Model {
     data class Result(val query: Query)

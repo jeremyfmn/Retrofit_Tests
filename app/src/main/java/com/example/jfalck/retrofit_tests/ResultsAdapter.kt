@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.jfalck.retrofit_tests.models.ApiModel
 
 
 class ResultsAdapter(context: Context) : RecyclerView.Adapter<ResultsAdapter.MyViewHolder>() {
